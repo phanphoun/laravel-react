@@ -38,6 +38,7 @@ export default function Dashboard() {
     return (
         <AppLayout breadcrumbs={breadcrumbs}>
             <Head title="Dashboard" />
+            
 
             <motion.div
                 initial={{ opacity: 0, y: 20 }}

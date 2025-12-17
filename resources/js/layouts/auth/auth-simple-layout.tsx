@@ -15,27 +15,30 @@ export default function AuthSimpleLayout({
     description,
 }: PropsWithChildren<AuthLayoutProps>) {
     return (
-        <div className="flex min-h-svh flex-col items-center justify-center gap-6 bg-background p-6 md:p-10">
-            <div className="w-full max-w-sm">
-                <div className="flex flex-col gap-8">
-                    <div className="flex flex-col items-center gap-4">
-                        <Link
-                            href={home()}
-                            className="flex flex-col items-center gap-2 font-medium"
-                        >
-                            <div className="mb-1 flex h-9 w-9 items-center justify-center rounded-md">
-                                <AppLogoIcon className="size-9 fill-current text-[var(--foreground)] dark:text-white" />
-                            </div>
-                            <span className="sr-only">{title}</span>
-                        </Link>
+        <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-slate-100 dark:from-slate-950 dark:via-slate-900 dark:to-slate-950 flex items-center justify-center p-6">
+            {/* Background blobs */}
+            <div className="absolute top-24 left-24 h-96 w-96 rounded-full bg-green-400/20 blur-3xl" />
+            <div className="absolute bottom-24 right-24 h-96 w-96 rounded-full bg-slate-400/20 blur-3xl" />
 
-                        <div className="space-y-2 text-center">
-                            <h1 className="text-xl font-medium">{title}</h1>
-                            <p className="text-center text-sm text-muted-foreground">
-                                {description}
-                            </p>
-                        </div>
-                    </div>
+            <div className="w-full max-w-md z-10">
+                <div className="flex flex-col items-center mb-8">
+                    <Link href={home()} className="flex items-center gap-2 text-2xl font-extrabold tracking-tight mb-2">
+                        <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-tr from-green-500 to-emerald-400 text-white shadow-md">
+                            🛒
+                        </span>
+                        <span className="bg-gradient-to-r from-slate-900 to-slate-600 dark:from-white dark:to-slate-400 bg-clip-text text-transparent">
+                            Shop<span className="font-black">&</span>Buy
+                        </span>
+                    </Link>
+                    <h1 className="text-2xl font-bold text-slate-900 dark:text-white mt-6">
+                        {title}
+                    </h1>
+                    <p className="mt-2 text-sm text-slate-600 dark:text-slate-400">
+                        {description}
+                    </p>
+                </div>
+
+                <div className="bg-white/70 dark:bg-slate-900/60 backdrop-blur-xl rounded-2xl border border-white/20 dark:border-slate-700 shadow-xl p-8">
                     {children}
                 </div>
             </div>
