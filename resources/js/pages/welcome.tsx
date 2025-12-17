@@ -173,7 +173,7 @@ export default function Welcome({ canRegister = true }: { canRegister?: boolean 
                                 <img
                                     src="https://shopmontigo.com/cdn/shop/files/MTAce32ozFrozen.png?v=1755761300"
                                     alt="Ocean Bottle Product"
-                                    className="relative w-80 h-80 object-contain drop-shadow-2xl mix-blend-multiply dark:mix-blend-screen transform transition-transform hover:scale-105"
+                                    className="relative w-120 h-80 object-contain drop-shadow-2xl mix-blend-multiply dark:mix-blend-screen transform transition-transform hover:scale-105"
                                     loading="lazy"
                                     decoding="async"
                                 />
@@ -257,6 +257,134 @@ export default function Welcome({ canRegister = true }: { canRegister?: boolean 
                         </motion.div>
                     </div>
                 </section>
+                {/* ---------------- Testimonials ---------------- */}
+                <section className="py-28 px-6">
+                    <div className="max-w-7xl mx-auto">
+                        <motion.h3
+                            variants={fadeUp}
+                            initial="hidden"
+                            whileInView="show"
+                            viewport={{ once: true }}
+                            className="text-4xl font-extrabold text-center mb-16"
+                        >
+                            What Our{' '}
+                            <span className="bg-gradient-to-r from-green-500 to-emerald-400 bg-clip-text text-transparent">
+                                Customers Say
+                            </span>
+                        </motion.h3>
+
+                        <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+                            {[
+                                {
+                                    name: 'Sophia Lee',
+                                    role: 'Online Shopper',
+                                    text: 'Shopping here feels effortless. Clean design, fast checkout, and reliable delivery.',
+                                },
+                                {
+                                    name: 'Daniel Kim',
+                                    role: 'Small Business Owner',
+                                    text: 'Shop & Buy helped me reach more customers without technical headaches.',
+                                },
+                                {
+                                    name: 'Amina Hassan',
+                                    role: 'Frequent Buyer',
+                                    text: 'Secure payments and smooth experience every time. Highly recommended.',
+                                },
+                            ].map((t, i) => (
+                                <motion.div
+                                    key={i}
+                                    variants={fadeUp}
+                                    initial="hidden"
+                                    whileInView="show"
+                                    viewport={{ once: true }}
+                                    transition={{ delay: i * 0.1 }}
+                                    className="rounded-3xl bg-white/70 dark:bg-slate-900/60 backdrop-blur-xl border border-white/20 dark:border-slate-700 p-8 shadow-lg"
+                                >
+                                    <p className="text-slate-600 dark:text-slate-400 mb-6 leading-relaxed">
+                                        “{t.text}”
+                                    </p>
+                                    <div className="font-semibold text-slate-900 dark:text-white">
+                                        {t.name}
+                                    </div>
+                                    <div className="text-xs text-slate-500">
+                                        {t.role}
+                                    </div>
+                                </motion.div>
+                            ))}
+                        </div>
+                    </div>
+                </section>
+
+                {/* ---------------- Contact ---------------- */}
+                <section className="py-28 px-6 bg-slate-50 dark:bg-slate-900/40">
+                    <div className="max-w-3xl mx-auto text-center">
+                        <motion.h3
+                            variants={fadeUp}
+                            initial="hidden"
+                            whileInView="show"
+                            viewport={{ once: true }}
+                            className="text-4xl font-extrabold mb-6"
+                        >
+                            Get in{' '}
+                            <span className="bg-gradient-to-r from-green-500 to-emerald-400 bg-clip-text text-transparent">
+                                Touch
+                            </span>
+                        </motion.h3>
+
+                        <motion.p
+                            variants={fadeUp}
+                            initial="hidden"
+                            whileInView="show"
+                            viewport={{ once: true }}
+                            className="text-lg text-slate-600 dark:text-slate-400 mb-12"
+                        >
+                            Have questions or need support? We’re here to help you anytime.
+                        </motion.p>
+
+                        <motion.form
+                            variants={fadeScale}
+                            initial="hidden"
+                            whileInView="show"
+                            viewport={{ once: true }}
+                            className="rounded-3xl bg-white/70 dark:bg-slate-900/60 backdrop-blur-xl border border-white/20 dark:border-slate-700 p-10 shadow-2xl text-left space-y-6"
+                        >
+                            <div>
+                                <label className="block text-sm font-medium mb-2">Name</label>
+                                <input
+                                    type="text"
+                                    className="w-full rounded-xl border border-slate-300 dark:border-slate-700 bg-transparent px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-green-500"
+                                    placeholder="Your name"
+                                />
+                            </div>
+
+                            <div>
+                                <label className="block text-sm font-medium mb-2">Email</label>
+                                <input
+                                    type="email"
+                                    className="w-full rounded-xl border border-slate-300 dark:border-slate-700 bg-transparent px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-green-500"
+                                    placeholder="you@example.com"
+                                />
+                            </div>
+
+                            <div>
+                                <label className="block text-sm font-medium mb-2">Message</label>
+                                <textarea
+                                    rows={4}
+                                    className="w-full rounded-xl border border-slate-300 dark:border-slate-700 bg-transparent px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-green-500"
+                                    placeholder="Write your message..."
+                                />
+                            </div>
+
+                            <button
+                                type="submit"
+                                className="w-full rounded-xl bg-slate-900 py-4 text-sm font-semibold text-white shadow-lg hover:shadow-xl transition dark:bg-white dark:text-slate-900"
+                            >
+                                Send Message
+                            </button>
+                        </motion.form>
+                    </div>
+                </section>
+                
 
                 {/* ---------------- Footer ---------------- */}
                 <footer className="py-20 px-6 border-t border-slate-200 dark:border-slate-800">
